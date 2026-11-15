@@ -1,14 +1,14 @@
-# 🍚 Tastic macOS
+# Macintux
 
 A comprehensive macOS development environment setup that gets you from zero to productive in minutes.
 
-![Tastic Rice Preview](./screenshots/preview.png)
+![Macintux Preview](./screenshots/preview.png)
 
 ## 🚀 Quick Start
 
 ```bash
 # Clone the repository
-git clone https://github.com/SvenBotha/TasticRice.dotfiles.git ~/dotfiles
+git clone --recurse-submodules https://github.com/SvenBotha/Macintux.dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
 # Run the installation script
@@ -173,7 +173,7 @@ To update your configurations:
 
    ```bash
    cd ~/dotfiles
-   git pull
+   git pull --recurse-submodules
    ```
 
 2. Re-run the install script:
@@ -186,7 +186,8 @@ The script will backup your existing configurations before overwriting them.
 ## 🗂️ Repository Structure
 
 ```
-TasticRice.dotfiles/
+Macintux.dotfiles/
+├── terminal/                  # Submodule: Macintux.Terminal (terminal modules)
 ├── install.sh                 # Main installation script
 ├── README.md                  # This file
 ├── AeroSpace/

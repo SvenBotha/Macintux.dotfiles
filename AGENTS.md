@@ -1,4 +1,4 @@
-# AGENTS.md — Bring-up runbook for TasticRice.dotfiles
+# AGENTS.md — Bring-up runbook for Macintux.dotfiles
 
 This is the end-to-end procedure to take a **fresh macOS machine** to a fully
 working setup from this repo alone. It is written for an automated agent, but a
@@ -19,12 +19,12 @@ permission is required, which no script or headless agent can supply).
 ## 1. Clone **[auto]**
 
 ```bash
-git clone https://github.com/SvenBotha/TasticRice.dotfiles.git ~/dotfiles
+git clone --recurse-submodules https://github.com/SvenBotha/Macintux.dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
-> `nvim/` is committed as plain files (NOT a git submodule), so a plain clone is
-> complete. Do **not** pass `--recurse-submodules`.
+> `terminal/` is a git submodule (`SvenBotha/Macintux.Terminal`). Clone with
+> `--recurse-submodules`. In an existing clone, run `git submodule update --init`.
 
 ---
 
@@ -171,6 +171,6 @@ done
 
 ```bash
 cd ~/dotfiles
-git pull
+git pull --recurse-submodules
 ./install.sh   # idempotent; backs up existing configs before overwriting
 ```
