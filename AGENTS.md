@@ -23,8 +23,10 @@ git clone --recurse-submodules https://github.com/SvenBotha/Macintux.dotfiles.gi
 cd ~/dotfiles
 ```
 
-> `terminal/` is a git submodule (`SvenBotha/Macintux.Terminal`). Clone with
-> `--recurse-submodules`. In an existing clone, run `git submodule update --init`.
+> `terminal/` is a git submodule (`SvenBotha/Macintux.Terminal`), which has its own
+> nested submodule `terminal/modules/omp` (`SvenBotha/Macintux.omp`). Clone with
+> `--recurse-submodules`. In an existing clone, run
+> `git submodule update --init --recursive`.
 
 ---
 
@@ -123,6 +125,15 @@ Run these once, in order, after `install.sh` finishes:
 
 6. **(Optional) tmux plugins** — inside tmux press `Ctrl-Space` then `I` to
    force a TPM install if the auto-install was skipped.
+
+7. **Restore oh-my-pi (omp)** — installs the pinned omp version and turns
+   `~/.omp/agent` into a clone of `Macintux.omp`. Any existing files it would
+   overwrite are first backed up to `~/.omp/agent.bak-<timestamp>/`.
+   Credentials are not in the repo, so log in afterwards:
+   ```bash
+   terminal/modules/omp/install.sh
+   omp login
+   ```
 
 ---
 
